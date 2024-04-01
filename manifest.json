@@ -1,0 +1,45 @@
+{
+  "name": "DC NB Extends",
+  "description": "DC NB Extends",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "action": {
+    "default_icon": "images/Alice.png",
+    "default_title": "DC Extends",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "assets/background.js"
+  },
+  "permissions": [
+    "webRequest",
+    "storage",
+    "contextMenus",
+    "bookmarks",
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess",
+    "declarativeNetRequestFeedback",
+    "scripting",
+    "webNavigation"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "<all_urls>"
+      ],
+      "js": [
+        "assets/contentScript.js"
+      ]
+    }
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "icons": {
+    "16": "images/Alice.png",
+    "48": "images/Alice.png",
+    "128": "images/Alice.png"
+  }
+}
